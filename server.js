@@ -3,25 +3,28 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 // Import routes from controller to give server access
-var routes = require('./controllers/rombu_controller.js');
+var index = require('./controllers/index.js');
 
 var port = process.env.PORT || 5000;
 
 // Express
 var app = express();
 
-// Serve static files
-app.use(express.static(process.cwd() + '/public'));
+
 
 // Body-parser
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({	extended: false	}));
-
 // Method-override
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
+// Serve static files
+app.use(express.static('public'));
 
 
-// SET EJS ENGINE HERE (ALSO REQUIRE EJS ABOVE)
+
+
+// SET EJS ENGINE HERE (ALSO REQUIRE EJS ABOV)
 
 
 
