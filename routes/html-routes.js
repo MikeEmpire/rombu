@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 
 var router = express.Router();
 
@@ -13,4 +13,17 @@ router.get('/portfolio', function(req, res) {
 });
 
 
-module.exports = router;
+module.exports = router;*/
+
+var path = require('path');
+
+module.exports = function(app) {
+	app.get('/', function(req, res) {
+		res.render('index', { title: 'Express'	});
+	});
+
+	app.get('/portfolio', function(req, res) {
+		res.render('index', { title: 'Portfolio'	});
+	});
+
+}
