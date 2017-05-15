@@ -4,8 +4,8 @@ var methodOverride = require('method-override');
 var path = require('path');
 
 // Import routes from controller to give server access
-var index = require('./controllers/index.js');
-var admin = require('./controllers/admin.js');
+var index = require('./routes/html-routes.js');
+var admin = require('./routes/admin-routes.js');
 
 var port = process.env.PORT || 5000;
 
