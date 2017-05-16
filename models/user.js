@@ -4,9 +4,6 @@ module.exports = function(sequelize, Sequelize) {
 	        type: Sequelize.STRING,
 	        allowNull: false
 	    },
-	    company: {
-	        type: Sequelize.STRING
-	    },
 	    email: {
 	        type: Sequelize.STRING,
 	        allowNull: false,
@@ -14,6 +11,9 @@ module.exports = function(sequelize, Sequelize) {
 	        validate: {
 	            isEmail: true
 	        }
+	    },
+	    subject: {
+	        type: Sequelize.STRING
 	    },
 	    message: {
 	        type: Sequelize.TEXT

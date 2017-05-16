@@ -4,8 +4,9 @@ var methodOverride = require('method-override');
 var path = require('path');
 
 // Import routes from controller to give server access
-/*var index = require('./routes/html-routes.js');
-var admin = require('./routes/admin-routes.js');*/
+var index = require('./routes/html-routes.js');
+var admin = require('./routes/admin-routes.js');
+var apiRoutes = require('./routes/api-routes.js');
 
 // Express
 var app = express();
@@ -28,11 +29,12 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-/*app.use('/', index);
-app.use('/admin', admin);*/
+app.use('/', index);
+app.use('/admin', admin);
+app.use('/api', apiRoutes);
 
-require('./routes/html-routes.js')(app);
-require('./routes/api-routes.js')(app);
+/*require('./routes/html-routes.js')(app);
+require('./routes/api-routes.js')(app);*/
 
 db.sequelize.sync().then(function() {
 	app.listen(port, function(err) {
