@@ -1,4 +1,4 @@
-/*var express = require('express');
+var express = require('express');
 
 var router = express.Router();
 
@@ -13,9 +13,9 @@ router.get('/portfolio', function(req, res) {
 });
 
 
-module.exports = router;*/
+module.exports = router;
 
-var path = require('path');
+/*var path = require('path');
 
 module.exports = function(app) {
 	app.get('/', function(req, res) {
@@ -26,4 +26,4 @@ module.exports = function(app) {
 		res.render('index', { title: 'Portfolio'	});
 	});
 
-}
+}*/
