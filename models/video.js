@@ -4,6 +4,9 @@ module.exports = function(sequelize, Sequelize) {
 	        type: Sequelize.STRING,
 	        allowNull: false
 	    },
+	    company: {
+	        type: Sequelize.STRING,
+	    },
 	    url: {
 	        type: Sequelize.STRING,
 	        allowNull: false

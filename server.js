@@ -6,7 +6,8 @@ var path = require('path');
 // Import routes from controller to give server access
 var index = require('./routes/html-routes.js');
 var admin = require('./routes/admin-routes.js');
-var apiRoutes = require('./routes/api-routes.js');
+var userApiRoutes = require('./routes/user-api-routes.js');
+var videoApiRoutes = require('./routes/video-api-routes.js');
 
 // Express
 var app = express();
@@ -31,7 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use('/', index);
 app.use('/admin', admin);
-app.use('/api', apiRoutes);
+app.use('/api/user', userApiRoutes);
+app.use('/api/video', videoApiRoutes);
 
 /*require('./routes/html-routes.js')(app);
 require('./routes/api-routes.js')(app);*/
