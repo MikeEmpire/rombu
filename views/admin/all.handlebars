@@ -1,0 +1,27 @@
+        
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+    <tbody>
+  	  {{#each data}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{name}}</td>
+        <td>{{company}}</td>
+      </tr>
+			{{/each}}
+    </tbody>
+  </table>
+
+
+
+{{#each data}}
+<ul>
+	<li>{{id}} | {{name}} | {{company}}</li>
+</ul>
+{{/each}}

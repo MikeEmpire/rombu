@@ -15,7 +15,6 @@ $("#add-btn").on("click", function(event) {
   $.post("/api/video/", newVideo)
     // On success, run the following code
     .done(function(data) {
-      // Log the data we found
       console.log(data);
     });
 
