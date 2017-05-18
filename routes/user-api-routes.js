@@ -4,14 +4,14 @@ var router = express.Router();
 var db = require("../models");
 
   // Get all users
-  router.get("/users", function(req, res) {
+  router.get("/", function(req, res) {
     db.User.findAll({})
     .then(function(results) {
       res.json(results);
     });
   });
   // Get single user
-  router.get("/users/:id", function(req, res) {
+  router.get("/:id", function(req, res) {
     db.User.findOne({
       where: {
         id: req.params.id
@@ -22,7 +22,7 @@ var db = require("../models");
     });
   });
   // Add users
-  router.post("/new", function(req, res) {
+  router.post("/", function(req, res) {
     console.log("req.body: " + req.body);
     User.create({
       name: req.body.name,
@@ -35,7 +35,7 @@ var db = require("../models");
     });
   });
   // Delete users
-  router.delete("/users/:id", function(req, res) {
+  router.delete(":id", function(req, res) {
     db.User.destroy({
       where: {
         id: req.params.id
@@ -46,7 +46,7 @@ var db = require("../models");
     });
   });
   // Put for updating users
-  router.put("/users", function(req, res) {
+  router.put("/", function(req, res) {
     db.User.update(req.body,
       {
         where: {

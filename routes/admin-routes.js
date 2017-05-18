@@ -8,4 +8,9 @@ router.get('/', function(req, res) {
   res.render('admin/layouts/main.ejs', index);
 });
 
+router.get('/add', function(req, res) {
+  res.render('admin/layouts/addVideo.ejs', index);
+})
+
+
 module.exports = router;
