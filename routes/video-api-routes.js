@@ -34,8 +34,8 @@ var db = require("../models");
       res.json(results);
     });
   });
- /* // Delete video
-  router.delete(":id", function(req, res) {
+  // Delete video
+  router.delete("/:id", function(req, res) {
     db.Video.destroy({
       where: {
         id: req.params.id
@@ -45,7 +45,7 @@ var db = require("../models");
       res.json(results);
     });
   });
-  // Put for updating videos
+ /* // Put for updating videos
   router.put("/", function(req, res) {
     db.Video.update(req.body,
       {
