@@ -36,9 +36,6 @@ app.use('/admin', admin);
 app.use('/api/user', userApiRoutes);
 app.use('/api/video', videoApiRoutes);
 
-/*require('./routes/html-routes.js')(app);
-require('./routes/api-routes.js')(app);*/
-
 db.sequelize.sync().then(function() {
 	app.listen(port, function(err) {
 		console.log('Listening on port ' + port);

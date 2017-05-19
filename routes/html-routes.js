@@ -2,14 +2,31 @@ var express = require('express');
 var router = express.Router();
 
 var db = require("../models");
-// var index = require("../views/main/index.ejs");
+var index = require("../views/main/index.handlebars");
 
-// router.get('/', function(req, res) {
-//   res.render('main/layouts/main.ejs', index);
-// });
+var home = {
+	 title: 'Welcome to Rombu!',
+	};
+var about = {
+   title: 'Rombu: Portfolio',
+  };
+var contact = {
+   title: 'Contact Rombu!',
+  };
 
-// router.get('/portfolio', function(req, res) {
-// 	res.render('main/layouts/main.ejs', { title: 'Portfolio'	});
-// });
+// Home
+router.get('/', function(req, res) {
+  res.render('main/index', home);
+});
+
+// Portfolio
+router.get('/about', function(req, res) {
+  res.render('main/about', about);
+});
+
+// Contact
+router.get('/contact', function(req, res) {
+  res.render('main/contact', contact);
+});
 
 module.exports = router;

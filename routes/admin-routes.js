@@ -2,29 +2,34 @@ var express = require('express');
 var router = express.Router();
 
 var db = require("../models");
-var test = {
-	 title: 'Home Page' 
+var home = {
+	 title: 'Admin - Home',
+   layout: 'admin.handlebars' 
 	};
-
-var addPage = {
-  title: 'Add Videos',
-}
+var allVideos = {
+   title: 'Admin - All Videos',
+   layout: 'admin.handlebars' 
+  };
+var addVideo = {
+   title: 'Admin - Add Video',
+   layout: 'admin.handlebars' 
+  };
 
 router.get('/', function(req, res) {
 
-  res.render('admin/index', test);
+  res.render('admin/index', home);
 });
 
 router.get('/all', function(req, res){
 	 db.Video.findAll({})
     .then(function(results) {
     	res.locals.data = results;
-      res.render('admin/all');
+      res.render('admin/all', allVideos);
     });
 })
 
 router.get('/add', function(req, res) {
-  res.render('admin/add', {title: 'Add Videos'});
+  res.render('admin/add', addVideo);
 })
 
 // Get single user
@@ -39,8 +44,5 @@ router.get('/add', function(req, res) {
     res.render('admin/edit');
   });
 });*/
-// router.get('/all', function(req, res{
-// 	res.render('')
-// }))
 
 module.exports = router;
