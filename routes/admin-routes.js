@@ -8,10 +8,12 @@ var home = {
 	};
 var allVideos = {
    title: 'Admin - All Videos',
+   addJS: '<script src="/assets/js/all.js" type="text/javascript"></script>',   
    layout: 'admin.handlebars' 
   };
 var addVideo = {
    title: 'Admin - Add Video',
+   addJS: '<script src="/assets/js/add.js" type="text/javascript"></script>',
    layout: 'admin.handlebars' 
   };
 
