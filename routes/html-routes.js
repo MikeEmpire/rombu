@@ -21,7 +21,11 @@ router.get('/', function(req, res) {
 
 // Portfolio
 router.get('/about', function(req, res) {
-  res.render('main/about', about);
+	db.Video.findAll({})
+    .then(function(results) {
+    	res.locals.video = results;
+      res.render('main/about', about);
+    });
 });
 
 // Contact
