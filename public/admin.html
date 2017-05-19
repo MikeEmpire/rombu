@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Embed API Demo</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+</head>
+
+<body>
+    <!-- Step 1: Create the containing elements. -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <p class="navbar-text">Logged in as:
+                    <br> Mark Roemer</p>
+                <ol class="breadcrumb">
+                    <li><a href="#">Add Videos</a></li>
+                    <li><a href="#">Delete Videos</a></li>
+                </ol>
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="assets/Rombu.png">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <script>
+        (function(w, d, s, g, js, fs) {
+            g = w.gapi || (w.gapi = {});
+            g.analytics = {
+                q: [],
+                ready: function(f) {
+                    this.q.push(f);
+                }
+            };
+            js = d.createElement(s);
+            fs = d.getElementsByTagName(s)[0];
+            js.src = 'https://apis.google.com/js/platform.js';
+            fs.parentNode.insertBefore(js, fs);
+            js.onload = function() {
+                g.load('analytics');
+            };
+        }(window, document, 'script'));
+        </script>
+        <div id="embed-api-auth-container"></div>
+        <div id="chart-container"></div>
+        <div id="view-selector-container"></div>
+        <script>
+        gapi.analytics.ready(function() {
+
+            /**
+             * Authorize the user immediately if the user has already granted access.
+             * If no access has been created, render an authorize button inside the
+             * element with the ID "embed-api-auth-container".
+             */
+            gapi.analytics.auth.authorize({
+                container: 'embed-api-auth-container',
+                clientid: '491282704416-kk4b8b8gnnfv3bhgj2pfa1j48dsvis87.apps.googleusercontent.com'
+            });
+
+
+            /**
+             * Create a new ViewSelector instance to be rendered inside of an
+             * element with the id "view-selector-container".
+             */
+            var viewSelector = new gapi.analytics.ViewSelector({
+                container: 'view-selector-container'
+            });
+
+            // Render the view selector to the page.
+            viewSelector.execute();
+
+
+            /**
+             * Create a new DataChart instance with the given query parameters
+             * and Google chart options. It will be rendered inside an element
+             * with the id "chart-container".
+             */
+            var dataChart = new gapi.analytics.googleCharts.DataChart({
+                query: {
+                    metrics: 'ga:sessions',
+                    dimensions: 'ga:date',
+                    'start-date': '30daysAgo',
+                    'end-date': 'yesterday'
+                },
+                chart: {
+                    container: 'chart-container',
+                    type: 'LINE',
+                    options: {
+                        width: '100%'
+                    }
+                }
+            });
+
+
+            /**
+             * Render the dataChart on the page whenever a new view is selected.
+             */
+            viewSelector.on('change', function(ids) {
+                dataChart.set({
+                    query: {
+                        ids: ids
+                    }
+                }).execute();
+            });
+
+        });
+        </script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
