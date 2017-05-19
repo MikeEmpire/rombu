@@ -9,7 +9,8 @@ $(document).ready(function() {
 			url: "/api/video/"+id
 		})
 		.done(function() {
-			alert("Deleted");
+			alert("delete");
+			location.reload();
 		})
 	}
 
