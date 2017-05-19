@@ -9,7 +9,6 @@ $("#add-btn").on("click", function(event) {
     description: $("#videoDescription").val().trim(),
     featured: $("#videoFeatured").val().trim()
   };
-  alert(newVideo);
 
   // Send an AJAX POST-request with jQuery
   $.post("/api/video/", newVideo)

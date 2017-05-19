@@ -2,17 +2,21 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Name</th>
+        {{!-- <th>ID</th> --}}
+        <th>Video Name</th>
         <th>Company</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
   	  {{#each data}}
       <tr>
-        <td>{{id}}</td>
+        {{!-- <td>{{id}}</td> --}}
         <td>{{name}}</td>
         <td>{{company}}</td>
+        <td>
+          <button class="btn btn-default delete" data-id={{this.id}} type="submit">Delete</button>
+        </td>
       </tr>
 			{{/each}}
     </tbody>
@@ -20,8 +24,11 @@
 
 
 
-{{#each data}}
+<!-- {{#each data}}
 <ul>
-	<li>{{id}} | {{name}} | {{company}}</li>
+  <li>{{id}} | {{name}} | {{company}}</li>
 </ul>
-{{/each}}
+{{/each}} -->
+
+
+<script src="/assets/js/all.js" type="text/javascript"></script>

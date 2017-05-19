@@ -3,12 +3,11 @@ var router = express.Router();
 
 var db = require("../models");
 var test = {
-	 title: 'Home Pagezxcvzx' 
+	 title: 'Home Page' 
 	};
 
 var addPage = {
   title: 'Add Videos',
-  addJS: '<script src="/assets/js/add.js" type="text/javascript"></script>'
 }
 
 router.get('/', function(req, res) {
@@ -25,9 +24,21 @@ router.get('/all', function(req, res){
 })
 
 router.get('/add', function(req, res) {
-  res.render('admin/add');
+  res.render('admin/add', {title: 'Add Videos'});
 })
 
+// Get single user
+/*router.get("/:id", function(req, res) {
+  db.Video.findOne({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(function(results) {
+    res.locals.data = results;
+    res.render('admin/edit');
+  });
+});*/
 // router.get('/all', function(req, res{
 // 	res.render('')
 // }))
