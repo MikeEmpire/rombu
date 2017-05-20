@@ -1,0 +1,204 @@
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#vidtop-content {
+  top: 0;
+  color: #fff;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Oswald:400);
+
+html {
+  height: 100%;
+  font-size: 100%;
+}
+body {
+  background: radial-gradient(ellipse at center, #8d93a0 0%, #404149 100%);
+}
+main {
+
+  opacity: 0.3;
+  width: 16rem;
+  margin: 10rem auto;
+  background: rgba(255,255,255,0.8);
+  border-radius: 0.9rem;
+  padding: 1rem;
+  color: #333;
+}
+main:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+  }
+
+#name {
+  font-family: "Oswald", "Arial";
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.5rem;
+}
+.info {
+  font-family: "Roboto Condensed", "Arial";
+  font-size: 1.08rem;
+  margin-bottom: 1.8rem;
+}
+#circle {
+  display: block;
+  position: relative;
+  width: 10rem;
+  height: 7rem;
+  margin: -5rem auto 0 auto;
+  text-align: center;
+  overflow: hidden;
+  perspective: 1200px;
+}
+#circle:hover #circle-flip {
+  transform: rotateY(180deg);
+}
+@keyframes flip {
+  10% {
+    transform: rotateY(180deg);
+  }
+  90% {
+    transform: rotateY(180deg);
+  }
+}
+#circle-flip {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 500ms;
+  animation: flip 3s;
+  animation-delay: 0.5s;
+}
+.front, .back, .bottom {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+input{
+  width:12rem;
+  height:2rem;
+}
+#circle .front {
+  background: url("https://static.wixstatic.com/media/4b2f85_122a592425c9cc8d86b94f454031e5a7.png/v1/fill/w_552,h_456,al_c,usm_0.66_1.00_0.01/4b2f85_122a592425c9cc8d86b94f454031e5a7.png") #DDD;
+  background-size: cover;
+  border-radius: 50%;
+}
+#circle .back {
+  background: url("https://static.wixstatic.com/media/4b2f85_72676502e9807a46ebb4b4280054122e.png/v1/fill/w_642,h_610,al_c,usm_0.66_1.00_0.01/4b2f85_72676502e9807a46ebb4b4280054122e.png") #FFF;
+  background-size: 35%;
+  background-repeat: no-repeat;
+  background-position: center 35%;
+  line-height: 11rem;
+  color: #666;
+  font-family: "Roboto Condensed", "Arial";
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.08rem;
+  border-radius: 50%;
+  transform: rotateY(180deg);
+}
+.button-container {
+  position: relative;
+  perspective: 1200px;
+}
+.button {
+  display: block;
+  height: 3.5rem;
+  width: 13rem;
+  margin: 0 auto 1.4rem auto;
+  transform-style: preserve-3d;
+  transform-origin: 50% 25px -25px; 
+  transition: all 300ms;
+  animation: underflip 3s;
+  animation-delay: 4s;
+}
+.button:hover {
+  transform: rotateX(90deg);
+}
+@keyframes underflip {
+  10% {
+    transform: rotateX(90deg);
+  }
+  90% {
+    transform: rotateX(90deg);
+  }
+}
+textarea{
+  width:12rem;
+  height:6rem;
+}
+.first.button .front {
+  background: url("https://static.wixstatic.com/media/4b2f85_2d655a1c959d12dfe444129f2299e34d.png/v1/fill/w_778,h_508,al_c,usm_0.66_1.00_0.01/4b2f85_2d655a1c959d12dfe444129f2299e34d.png") #FFF;
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.first.button .bottom {
+  background: transparent;
+  white-space: nowrap;
+}
+.first.button .bottom::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: -10px;
+}
+.first.button .bottom span {
+  color: #FFF;
+  font-family: "Roboto Condensed", "Arial";
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.07rem;
+  vertical-align: middle;
+  display: inline-block;
+  white-space: normal;
+  padding: 0.3rem;
+}
+.button .bottom {
+  transform: rotateX(-90deg) translateY(25px) translateZ(25px);
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  font-family: "Roboto Condensed", "Arial";
+  font-size: 0.8em;
+  color: rgba(255,255,255,0.3);
+}
+
+@media all and (min-width: 1800px), (min-resolution: 192dpi) {
+  html {
+    font-size: 150%;
+  }
+}
+#success_message{ display: none;}
