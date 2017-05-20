@@ -16,7 +16,12 @@ var contact = {
 
 // Home
 router.get('/', function(req, res) {
-  res.render('main/index', home);
+  db.Video.findAll({})
+    .then(function(results) {
+      res.locals.video = results;
+      console.log(res.locals.video[0].url);
+      res.render('main/index', home);
+    });
 });
 
 // Portfolio
@@ -24,9 +29,6 @@ router.get('/about', function(req, res) {
 	db.Video.findAll({})
     .then(function(results) {
     	res.locals.video = results;
-      // for (var i=0; i<res.locals.video.length; i++) {
-      //   res.locals.video[i].url = $.parseHTML(res.locals.video[i].url);
-      // }
       console.log(res.locals.video[0].url);
       res.render('main/about', about);
     });
