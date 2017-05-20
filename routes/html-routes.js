@@ -7,12 +7,20 @@ var index = require("../views/main/index.handlebars");
 var home = {
 	 title: 'Welcome to Rombu!',
 	};
-var about = {
-   title: 'Rombu: Portfolio',
+var portfolio = {
+   title: 'Portfolio for Rombu',
   };
 var contact = {
    title: 'Contact Rombu!',
+   addCSS: "<link rel='stylesheet' href='/assets/css/contact.css'>"
+
   };
+var about = {
+  title: 'About Rombu'
+};
+var brands = {
+  title: 'Rombu Brands'
+};
 
 // Home
 router.get('/', function(req, res) {
@@ -25,18 +33,25 @@ router.get('/', function(req, res) {
 });
 
 // Portfolio
-router.get('/about', function(req, res) {
+router.get('/portfolio', function(req, res) {
 	db.Video.findAll({})
     .then(function(results) {
     	res.locals.video = results;
-      console.log(res.locals.video[0].url);
-      res.render('main/about', about);
+      res.render('main/portfolio', portfolio);
     });
 });
 
 // Contact
 router.get('/contact', function(req, res) {
   res.render('main/contact', contact);
+});
+
+router.get('/about', function(req, res) {
+  res.render('main/about', about);
+});
+
+router.get('/brands', function(req, res) {
+  res.render('main/brands', brands);
 });
 
 module.exports = router;
