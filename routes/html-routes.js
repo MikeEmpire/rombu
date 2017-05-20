@@ -13,7 +13,7 @@ var portfolio = {
 var contact = {
    title: 'Contact Rombu!',
    addCSS: "<link rel='stylesheet' href='/assets/main/css//contact.css'>",
-   addJS: '<script src="/assets/main/js/contact.js" type="text/javascript"></script>',   
+   addJS: '<script src="/assets/main/js/contact.js" type="text/javascript"></script>',
   };
 var about = {
   title: 'About Rombu'
@@ -32,12 +32,12 @@ router.get('/', function(req, res) {
     });
 });
 
-// Portfolio
+// portfolio
 router.get('/portfolio', function(req, res) {
 	db.Video.findAll({})
     .then(function(results) {
     	res.locals.video = results;
-      res.render('main/portfolio', portfolio);
+      res.render('main/portfolio', about);
     });
 });
 
@@ -45,11 +45,11 @@ router.get('/portfolio', function(req, res) {
 router.get('/contact', function(req, res) {
   res.render('main/contact', contact);
 });
-
+// about
 router.get('/about', function(req, res) {
   res.render('main/about', about);
 });
-
+// brands(just in case)
 router.get('/brands', function(req, res) {
   res.render('main/brands', brands);
 });

@@ -9,7 +9,7 @@ if ("undefined" == typeof jQuery)
 + function(a) {
   "use strict";
   var b = a.fn.jquery.split(" ")[0].split(".");
-  if (b[0] < 2 && b[1] < 9 || 1 == b[0] && 9 == b[1] && b[2] < 1 || b[0] > 3) 
+  if (b[0] < 2 && b[1] < 9 || 1 == b[0] && 9 == b[1] && b[2] < 1 || b[0] > 3)
     throw new Error("Bootstrap's JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4")
 }(jQuery), + function(a) {
   "use strict";

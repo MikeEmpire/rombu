@@ -1,4 +1,6 @@
-
+div.container#contact {
+  width: 100%;
+}
 
 * { box-sizing: border-box; }
 .video-background {
@@ -135,7 +137,7 @@ input{
   width: 13rem;
   margin: 0 auto 1.4rem auto;
   transform-style: preserve-3d;
-  transform-origin: 50% 25px -25px; 
+  transform-origin: 50% 25px -25px;
   transition: all 300ms;
   animation: underflip 3s;
   animation-delay: 4s;
@@ -220,6 +222,6 @@ footer {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background: url(polina.jpg) no-repeat;
-    background-size: cover; 
+    background-size: cover;
 
 }
