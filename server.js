@@ -2,8 +2,23 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var path = require('path');
-var exphbs = require('express-handlebars');
+var exphbs = require('express-handlebars'),
+  hbs = exphbs.create({
+    // Specify helpers which are only registered on this instance.
+    helpers: {
+      ifThird: function(index, options) {
+        if (index % 3 == 0) {
+          return options.fn(this);
+        } else {
+          return options.inverse(this);
+        }
 
+      },
+      bar: function() {
+        return 'BAR!';
+      }
+    }
+  })
 // Import routes from controller to give server access
 var index = require('./routes/html-routes.js');
 var admin = require('./routes/admin-routes.js');
@@ -22,9 +37,9 @@ app.set('view engine', 'handlebars');
 
 // Body-parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({	extended: false	}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.json({type: "application/vnd.api+json"}));
 // Method-override - Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 // Serve static files
@@ -37,7 +52,7 @@ app.use('/api/user', userApiRoutes);
 app.use('/api/video', videoApiRoutes);
 
 db.sequelize.sync().then(function() {
-	app.listen(port, function(err) {
-		console.log('Listening on port ' + port);
-	});
+  app.listen(port, function(err) {
+    console.log('Listening on port ' + port);
+  });
 });

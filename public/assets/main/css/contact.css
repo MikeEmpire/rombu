@@ -1,3 +1,6 @@
+div.container#contact {
+  width: 100%;
+}
 * { box-sizing: border-box; }
 .video-background {
   background: #000;
@@ -133,7 +136,7 @@ input{
   width: 13rem;
   margin: 0 auto 1.4rem auto;
   transform-style: preserve-3d;
-  transform-origin: 50% 25px -25px; 
+  transform-origin: 50% 25px -25px;
   transition: all 300ms;
   animation: underflip 3s;
   animation-delay: 4s;
@@ -201,4 +204,22 @@ footer {
     font-size: 150%;
   }
 }
+#backgroundVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+
+}
+
 #success_message{ display: none;}

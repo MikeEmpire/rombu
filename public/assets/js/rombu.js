@@ -38,15 +38,15 @@ $(document).ready(function() {
     // This is necessary so you never see what is "behind" the navbar.
     if (st > lastScrollTop && st > navbarHeight) {
       // Scroll Down
-      $nav.velocity({opacity: 0});
-    } else if (st === 0) {
-      $nav.velocity({opacity: 0});
+      $nav.velocity({opacity: 1});
+      console.log('scrolled down')
     } else {
       // Scroll Up
       if (st + $(window).height() < $(document).height()) {
+        console.log('scrolled up');
         $nav.velocity({
-          opacity: 1
-        }, {duration: "fast"});
+          opacity: .5
+        });
       }
     }
     lastScrollTop = st;
