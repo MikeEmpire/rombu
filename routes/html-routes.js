@@ -12,8 +12,8 @@ var portfolio = {
   };
 var contact = {
    title: 'Contact Rombu!',
-   addCSS: "<link rel='stylesheet' href='/assets/css/contact.css'>"
-
+   addCSS: "<link rel='stylesheet' href='/assets/main/css//contact.css'>",
+   addJS: '<script src="/assets/main/js/contact.js" type="text/javascript"></script>',   
   };
 var about = {
   title: 'About Rombu'
