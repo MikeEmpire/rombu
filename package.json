@@ -19,7 +19,8 @@
   "homepage": "https://github.com/SwiftMike/rombu#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2",
+    "express": "^4.15.3",
+    "express-basic-auth": "^1.0.2",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.8",
     "mysql": "^2.13.0",
