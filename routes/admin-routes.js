@@ -28,6 +28,7 @@ router.get('/all', function(req, res){
     	res.locals.data = results;
       res.render('admin/all', allVideos);
     });
+
 })
 
 router.get('/add', function(req, res) {
@@ -46,5 +47,6 @@ router.get('/add', function(req, res) {
     res.render('admin/edit');
   });
 });*/
+
 
 module.exports = router;
