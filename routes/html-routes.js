@@ -24,6 +24,10 @@ router.get('/about', function(req, res) {
 	db.Video.findAll({})
     .then(function(results) {
     	res.locals.video = results;
+      // for (var i=0; i<res.locals.video.length; i++) {
+      //   res.locals.video[i].url = $.parseHTML(res.locals.video[i].url);
+      // }
+      console.log(res.locals.video[0].url);
       res.render('main/about', about);
     });
 });
