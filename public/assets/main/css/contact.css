@@ -1,7 +1,6 @@
 div.container#contact {
   width: 100%;
 }
-
 * { box-sizing: border-box; }
 .video-background {
   background: #000;
@@ -205,9 +204,6 @@ footer {
     font-size: 150%;
   }
 }
-#success_message{ display: none;}
-
-
 #backgroundVideo {
     position: fixed;
     top: 50%;
@@ -225,3 +221,5 @@ footer {
     background-size: cover;
 
 }
+
+#success_message{ display: none;}
