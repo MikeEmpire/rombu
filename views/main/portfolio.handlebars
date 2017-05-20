@@ -1,0 +1,10 @@
+<h1>Portfolio</h1>
+
+{{#each video}}
+<ul>
+	<li>{{name}}</li>
+	<li>{{company}}</li>
+	<li><iframe src='{{url}}' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+	<li>{{description}}</li>
+</ul>
+{{/each}}
