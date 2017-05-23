@@ -15,6 +15,13 @@ $(document).ready(function() {
   var delta = 5;
   var $nav = $('.navbar');
   var navbarHeight = $('.navbar').outerHeight();
+  var linksList = document.querySelectorAll('#navbar ul li a[href]');
+  for (var i = 0; i < linksList.length; i++) {
+  	var link = linksList[i];
+  	if (window.location.href === linksList[i].href) {
+  		link.className = 'active';
+  	}
+  }
 
   $(window).scroll(function(event) {
     didScroll = true;
@@ -36,19 +43,13 @@ $(document).ready(function() {
 
     // If they scrolled down and are past the navbar, add class .nav-up.
     // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight) {
+    if (st > lastScrollTop && st > 100) {
       // Scroll Down
       $nav.velocity({opacity: 1});
-      console.log('scrolled down')
-    } else {
-      // Scroll Up
-      if (st + $(window).height() < $(document).height()) {
-        console.log('scrolled up');
-        $nav.velocity({
-          opacity: .5
-        });
-      }
-    }
+    } else if (st < 600) {
+      $nav.velocity({opacity: 0});
+    } else {}
     lastScrollTop = st;
   }
+
 })
