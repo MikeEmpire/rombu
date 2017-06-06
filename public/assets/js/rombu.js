@@ -9,13 +9,13 @@ $(document).ready(function() {
     $img.velocity({opacity: 1});
 
   }, 5000);
-  $(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
-      $nav.addClass('shrink');
-    } else {
-      $nav.removeClass('shrink');
-    }
-  });
+  // $(window).scroll(function() {
+  //   if ($(document).scrollTop() > 50) {
+  //     $nav.addClass('shrink');
+  //   } else {
+  //     $nav.removeClass('shrink');
+  //   }
+  // });
   var $nav = $('.navbar');
   var linksList = document.querySelectorAll('#navbar ul li a[href]');
   for (var i = 0; i < linksList.length; i++) {
