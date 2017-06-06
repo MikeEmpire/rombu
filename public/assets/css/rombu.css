@@ -35,7 +35,7 @@ ENTER PAGE
   color: white;
 }
 
-video {
+video#bgvid {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -617,6 +617,10 @@ hr#description {
 
 div#nest h5 {
   line-height: 33px;
+}
+
+#nest div {
+  padding: 0;
 }
 
 #mediaRow {

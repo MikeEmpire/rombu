@@ -11,6 +11,10 @@ module.exports = function(sequelize, Sequelize) {
 	        type: Sequelize.STRING,
 	        allowNull: false
 	    },
+			videoType: {
+				type: Sequelize.STRING,
+				allowNull: false
+			},
 	    description: {
 	        type: Sequelize.TEXT
 	    },
