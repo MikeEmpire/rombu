@@ -31,7 +31,7 @@ router.get('/', function(req, res) {
   db.Video.findAll({})
     .then(function(results) {
       res.locals.video = results;
-      console.log(res.locals.video[0].url);
+      // console.log(res.locals.video[0].url);
       res.render('main/index', home);
     });
 });
