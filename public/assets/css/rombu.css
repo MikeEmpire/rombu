@@ -63,11 +63,11 @@ div.overlay_2 {
   background: black;
   height: 100%;
   width: 100%;
-  color: #E7DFDD;
+  color: white;
 }
 
 div.overlay_2 img#logo {
-  padding: 0% 11vw;
+  padding: 10vh 11vw;
   opacity: 0;
   width: 40%;
 }
@@ -210,7 +210,7 @@ Mask 2
   /* overwrite default style */
   opacity: 1;
   padding-bottom: 20vh;
-  font-size: 3vw;
+  font-size: 1.268em;
   letter-spacing: 8px;
   height: 24vh;
   font-family: 'Josefin Sans', sans-serif;
@@ -539,7 +539,7 @@ h6 {
 
 h3>* {
   font-size: large;
-  color: #E7DFDD;
+  color: white;
   line-height: 2em;
 }
 
@@ -603,6 +603,12 @@ blockquote em {
 
 h3#rev-9 {
   margin-top: 13%;
+}
+
+hr {
+  height: 1vmin;
+  background: #e68086;
+  border: none;
 }
 
 hr#description {
