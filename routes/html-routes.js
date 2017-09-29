@@ -9,16 +9,18 @@ var home = {
 	};
 var portfolio = {
    title: 'Portfolio for Rombu',
+	 addCSS: "<link rel='stylesheet' href='/assets/main/css/portfolio.css'",
+	 addJS: "<script src='https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.0/masonry.pkgd.min.js' type='text/javascript'> \n </script><script src='//cdn.jsdelivr.net/blazy/latest/blazy.min.js' type='text/javascript'></script> \n <script src='/assets/main/js/portfolio.js'"
   };
 var contact = {
    title: 'Contact Rombu!',
    addCSS: "<link rel='stylesheet' href='/assets/main/css/contact.css'>",
-   addJS: '<script src="/assets/main/js/contact.js" type="text/javascript"></script>', 
+   addJS: '<script src="/assets/main/js/contact.js" type="text/javascript"></script>',
   };
 var about = {
   title: 'About Rombu',
   addCSS: "<link rel='stylesheet' href='/assets/main/css/about.css'>",
-  addJS: '<script src="/assets/main/js/about.js" type="text/javascript"></script>',   
+  addJS: '<script src="/assets/main/js/about.js" type="text/javascript"></script>',
 
 
 };
@@ -31,7 +33,6 @@ router.get('/', function(req, res) {
   db.Video.findAll({})
     .then(function(results) {
       res.locals.video = results;
-      console.log(res.locals.video[0].url);
       res.render('main/index', home);
     });
 });
@@ -41,7 +42,7 @@ router.get('/portfolio', function(req, res) {
 	db.Video.findAll({})
     .then(function(results) {
     	res.locals.video = results;
-      res.render('main/portfolio', about);
+      res.render('main/portfolio', portfolio);
     });
 });
 

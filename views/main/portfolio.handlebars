@@ -1,26 +1,12 @@
-<style>
-	body {
-		background: #ececec;
-	}
-	.video-responsive {
-		overflow: hidden;
-		padding-bottom: 56.25%;
-		position: relative;
-		height: 0;
-	}
-
-	.video-responsive iframe {
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		position: absolute;
-	}
-</style>
 <div class="container">
+	<h1>Portfolio</h1>
+</div>
+<div class="container grid col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	{{#video}}
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<iframe src='{{url}}' webkitallowfullscreen mozallowfullscreen allowfullscreen width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 grid-item-container">
+				<li>
+					<iframe class="b-lazy grid-item {{videoType}}" src='{{url}}' webkitallowfullscreen mozallowfullscreen allowfullscreen width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</li>
 			</div>
 	{{/video}}
-	</script>
+</div>
