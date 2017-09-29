@@ -4,7 +4,7 @@ $(document).ready(function() {
   setTimeout(() => {
     $scrollLogo.velocity({
       opacity: 0
-    }, {loop: 2}).velocity({width: 60});
+    }, {loop: 1}).velocity({width: 60});
 
     $img.velocity({opacity: 1});
 
@@ -29,5 +29,4 @@ $(document).ready(function() {
   }).mouseleave(function() {
     $nav.velocity('reverse');
   });
-
 })
