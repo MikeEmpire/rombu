@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
 body {
-  background: #ececec;
-  color: #373a3c;
+  background: black;
+  color: white;
 }
 
 .container#topRow {
-  background-color: #5ca2d5;
+  background-color: black;
   color: white;
   margin: 0;
   padding: 0;
@@ -50,7 +50,7 @@ div#body {
 hr {
   margin: 0 0 29px 0;
   height: 1vmin;
-  background: #e68086;
+  background: white;
   border: none;
 }
 
@@ -67,7 +67,8 @@ p:first {
   font-size: 3vw;
 }
 .spacer {
-  margin-top: 1%;
+  margin: 1% 0;
+  background: white;
 }
 h2#clients {
   font-size: 5vw;
